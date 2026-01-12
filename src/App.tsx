@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent } from 'react';
+import { useState } from 'react';
 import './App.css'
 import { generateGrayScales, generateLighterColor } from './helpers'
 import { ToastContainer, toast } from 'react-toastify';
@@ -7,8 +7,6 @@ function App() {
   const [mainColor, setMainColor] = useState('rgb(23,86,139)')
   const [secondaryColor, setSecondaryColor] = useState('rgb(80, 159, 239)')
 
-  const color = "rgb(23,86,139)"
-  const secondary = "rgb(80, 159, 239)"
   const grays = generateGrayScales(mainColor, 15)
   const mainColors = generateLighterColor(mainColor, undefined, 15)
   const secondaryColors = generateLighterColor(secondaryColor, "secondary", 15)
