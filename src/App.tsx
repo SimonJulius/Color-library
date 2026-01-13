@@ -64,11 +64,17 @@ function App() {
     const style = new Option().style;
     style.color = '';
     style.color = value;
+    console.log({color: style.color})
     return style.color !== '';
   };
 
-  const isValidHexColor = (value: string): boolean =>
-    HEX_COLOR_REGEX.test(value) && isBrowserValidColor(value);
+  const isValidHexColor = (value: string): boolean => {
+    if(value.length !== 4 && value.length !== 7) {
+      return false
+    }
+    return  HEX_COLOR_REGEX.test(value) && isBrowserValidColor(value);
+  }
+   
 
 
 
